@@ -4,9 +4,9 @@
 
 ## Integrantes del equipo
 
-Ana Ramos Palacios
-Almudena Ramos Platero
-Alejandro Urraco Nieto
+Ana Ramos Palacios\n
+Almudena Ramos Platero\n
+Alejandro Urraco Nieto\n
 Felipe Tafurth López
 
 ## Objetivos del trabajo
