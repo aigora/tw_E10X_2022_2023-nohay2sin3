@@ -4,7 +4,10 @@
 
 ## Integrantes del equipo
 
-[Nombres, apellidos, y usuario GitHub de los integrantes del equipo.]
+Ana Ramos Palacios
+Almudena Ramos Platero
+Alejandro Urraco Nieto
+Felipe Tafurth López
 
 ## Objetivos del trabajo
 
