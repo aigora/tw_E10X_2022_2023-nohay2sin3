@@ -6,5 +6,7 @@ int main()
 
     printf ("Prueba 2");
 
+    printf ("Prueba 3");
+
     return 0;
 }
