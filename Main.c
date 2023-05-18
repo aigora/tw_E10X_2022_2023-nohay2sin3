@@ -8,5 +8,7 @@ int main()
 
     printf ("Prueba 3");
 
+    printf ("Prueba 4");
+
     return 0;
 }
