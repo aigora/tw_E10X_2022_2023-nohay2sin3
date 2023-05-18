@@ -12,5 +12,8 @@ int main()
 
     printf ("Prueba 5");
 
+    printf ("Prueba 6");
+
+
     return 0;
 }
