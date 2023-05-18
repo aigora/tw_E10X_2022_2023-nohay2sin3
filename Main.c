@@ -14,6 +14,5 @@ int main()
 
     printf ("Prueba 6");
 
-
     return 0;
 }
