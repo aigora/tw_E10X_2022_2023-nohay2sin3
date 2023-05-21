@@ -3,14 +3,14 @@
 
 void pInicio() {
     printf("\n");
-    printf("\tBienvenido al programa de calculos estadisticos\n\n");
+    printf("\tBienvenido al programa de calculos estadisticos\n\n"); //Funcion menu inicio
 }
 
 void pSeleccion() {
     printf("\n");
     printf("\tSeleccione la operacion a realizar:\n\n");
     printf("\t1\tCalculos estadisticos\n");
-    printf("\t2\tDatos actuales\n");
+    printf("\t2\tDatos actuales\n");    //menu seleccion
     printf("\t3\tIngresar datos\n");
     printf("\t4\tEliminar datos\n");
     printf("\t5\tSalir del programa\n\n");
@@ -52,3 +52,4 @@ void pConfirmarSalir() {
     printf("\t1\tSi\n");
     printf("\t2\tNo\n\n");
 }
+
