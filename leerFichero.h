@@ -33,3 +33,9 @@ void leerTitulo(char fila[], datos memoria[], int numYear, int numFuente);
 void compilarDatos(char fila[], datos memoria[], int numYear, int numFuentes, int meses[]);
 
 void Imprimir_tabla(datos GWh[], int numYear, int num_mes_por_year[]);
+
+void hacer_copia_seguridad(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);
+
+void escoger_fichero_salida(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);
+
+void guardar_datos(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);

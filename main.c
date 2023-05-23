@@ -70,6 +70,9 @@ int main() {
         compilarDatos(filas[m], GWh, numYear, i, num_mes_por_year);
     }
 
+    //Hace copia de seguridad del archivo en caso de no querer guardar cambios en el original
+    hacer_copia_seguridad(filas, numYear, num_mes_por_year, GWh);
+
     pantallaSeleccion:
         pSeleccion();
         entrada = getch();
@@ -116,6 +119,7 @@ int main() {
     switch (entrada) {
         case '1':
             //Caso cerrar programa
+            escoger_fichero_salida(filas, numYear, num_mes_por_year, GWh);
             system("cls");
             break;
 
