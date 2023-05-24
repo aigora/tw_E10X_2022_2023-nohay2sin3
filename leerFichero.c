@@ -432,3 +432,126 @@ void guardar_datos(char filas[][10000], int numYear, int num_mes_por_year[], dat
     }
     fclose(guardar);
 }
+
+//Funcion capaz de eliminar datos de forma provisional, esto solo 
+//se hará permanente una vez se guarde al salir del programa, 
+//eliminar datos de forma permanente o provisional alterará los 
+//calculos estadisticos. 
+void eliminar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
+    int i = 0, j = 0, k = 0, compr = 0, mes = 1, decision = 1;
+    char pasar_pag, menu, salir;
+    system("cls");
+    do
+    {
+        system("cls");
+        printf("\n1. Restaurar datos (solo se podran restaurar los datos eliminados previos a la salida y guardado del programa)\n\n2. Eliminar un dato\n\n3. Volver atras\n");
+        menu = getch();
+        switch (menu)
+        {
+        case ('1'):
+            for ( i = 0; i < 18; i++){
+                for ( j = 0; j < numYear; j++){
+                    for ( k = 0; k < num_mes_por_year[j]; k++){
+                        GWh[j].data[i].eliminado[k] = 0;
+                    }
+                }
+            }
+            system("cls");
+            printf("\nDatos restaurados\n");
+            system("pause");
+            break;
+        case ('2'):
+            k = 0;
+            i = 0;
+            j = 0;
+            do{
+                system("cls");
+                printf("Selecciona dato a eliminar:\n\n");
+                printf("\t\t\t%s(%i/%i): %.15f\n", GWh[i].data[k].nombre_fuente, GWh[i].date[j].month, GWh[i].date[j].year, GWh[i].data[k].valor_mes[j]);
+                printf("\nCon 'A' y 'D' Se cambian las fuentes, con 'W' y 'S' se cambia la fecha, presiona 'espacio' para saber que se esta cambiando:\n\nActualmente cambiando: ");
+                if (mes == 1){
+                    printf("\x1b[32m meses\x1b[0m\n");
+                }
+                if(mes == 0){
+                    printf("\x1b[32m a%cos\x1b[0m\n", 164);
+                }
+                printf("\nPresione enter cuando quiera seleccionar el dato\n");
+                pasar_pag = getch();
+                if (((pasar_pag == 'A') || (pasar_pag == 'a')) && (k != 0)){
+                    k = k - 1;
+                    if (k == -1){
+                        k = 0;
+                    }
+                }
+                if (((pasar_pag == 'D') || (pasar_pag == 'd')) && (k != 17)){
+                    k = k + 1;
+                    if (k == 18){
+                        k = 17;
+                    }
+                }
+                if ((pasar_pag == 'W') || (pasar_pag == 'w')){
+                    if (mes == 0){
+                        i++;
+                        if (i == numYear){
+                            i = numYear-1;
+                        }
+                    }
+                    if (mes == 1){
+                        j++;
+                        if (j == num_mes_por_year[i]){
+                            j = num_mes_por_year[i]-1;
+                        }
+                    }
+                }
+                if ((pasar_pag == 'S') || (pasar_pag == 's')){
+                    if (mes == 0){
+                        i--;
+                        if (i == -1){
+                            i = 0;
+                        }
+                    }
+                    if (mes == 1){
+                        j--;
+                        if (j == -1){
+                            j = 0;
+                        }
+                    }
+                }
+                if (pasar_pag == 32){
+                    if (mes == 1){
+                        mes = 0;
+                    }
+                    else{
+                        mes = 1;
+                    }
+                }
+                if (pasar_pag == 13){
+                    system("cls");
+                    printf("¿Esta seguro de eliminar este dato? (Si no guarda cambios se le devolvera al menu de todas formas)\n1. Si\n2. No\n");
+                    do{
+                        salir = getch();
+                        switch (salir){
+                        case ('1'):
+                            compr = 0;
+                            decision = 0;
+                            GWh[i].data[k].eliminado[j] = 1;
+                            break;
+                        case ('2'):
+                            compr = 0;
+                            decision = 0;
+                            break;
+                        default:
+                            break;
+                        }
+                    } while (compr == 1);
+                }
+                system("cls");
+            } while (decision == 1);
+            decision = 1;
+            compr = 1;
+            break;
+        default:
+            break;
+        }
+    } while (menu != '3');
+}

@@ -39,3 +39,5 @@ void hacer_copia_seguridad(char filas[][10000], int numYear, int num_mes_por_yea
 void escoger_fichero_salida(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);
 
 void guardar_datos(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);
+
+void eliminar_dato(datos GWh[], int numYear, int num_mes_por_year[]);

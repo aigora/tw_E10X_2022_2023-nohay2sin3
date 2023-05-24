@@ -98,6 +98,9 @@ int main() {
             case '4':
                 //Caso eliminar datos
                 system("cls");
+                eliminar_dato(GWh, numYear, num_mes_por_year);
+                system("cls");
+                goto pantallaSeleccion;
                 break;
             
             case '5':
