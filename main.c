@@ -7,6 +7,7 @@
 
 #include "menu.h"
 #include "leerFichero.h"
+#include "estadistica.h"
 
 int main() {
     //Declaracion de variables necesarias
@@ -15,6 +16,7 @@ int main() {
     int numDatos = 0, numYear = 0, num_mes_por_year[15];
     char filas[23][10000], fila[10000], *cad_aux, separador1[] = ",/", titulo[50], separador2[] = {'"',','};
 
+    resultado x[15];
     datos GWh[30];
 
     FILE *archivo;
@@ -80,6 +82,14 @@ int main() {
             case '1':
                 //Caso calculos estadisticos
                 system("cls");
+                calculos(entrada, GWh, numYear);
+                system("cls");
+                system("pause");
+                compilar_resultados(numYear, x);
+                system("cls");
+                imprimir_resultados(numYear, x);
+                system("cls");
+                goto pantallaSeleccion;
                 break;
 
             case '2':
