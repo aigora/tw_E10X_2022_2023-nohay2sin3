@@ -103,6 +103,12 @@ int main() {
             case '3':
                 //Caso ingresar datos
                 system("cls");
+                ingresar_editar_dato(GWh, numYear, num_mes_por_year);
+                numeroYears(GWh, &numYear);
+                printf("\nDatos ingresados correctamente\n\n");
+                system("pause");
+                system("cls");
+                goto pantallaSeleccion;
                 break;
             
             case '4':

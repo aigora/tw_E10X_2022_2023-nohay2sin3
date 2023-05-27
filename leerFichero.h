@@ -51,3 +51,5 @@ void escoger_fichero_salida(char filas[][10000], int numYear, int num_mes_por_ye
 void guardar_datos(char filas[][10000], int numYear, int num_mes_por_year[], datos GWh[]);
 
 void eliminar_dato(datos GWh[], int numYear, int num_mes_por_year[]);
+
+void ingresar_editar_dato(datos GWh[], int numYear, int num_mes_por_year[]);
