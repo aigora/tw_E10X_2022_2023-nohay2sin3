@@ -435,7 +435,7 @@ void imprimir_resultados(int numYear, resultado estadistica[]){
     do
     {
         system("cls");
-        printf("Pulsa 'A' y 'D' para cambiar el tipo de calculo estadístico, para cambiar el año pulse 'S' y 'W':\n*Para volver al menu presiona espacio*\nDato estadístico mostrado: ");
+        printf("Pulsa 'A' y 'D' para cambiar el tipo de calculo estadistico, para cambiar el ano pulse 'S' y 'W':\n*Para volver al menu presiona espacio*\nDato estadistico mostrado: ");
         printf("\t%s\n", estadistica[0].dato[k].nombre_calculo);
         for ( i = 0; i < 18; i++){
             printf("\t%s\n", estadistica[j].dato[k].dato_calculo[i]);   

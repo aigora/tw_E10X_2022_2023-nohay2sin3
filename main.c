@@ -45,7 +45,7 @@ int main() {
     //Guarda el numero de columnas en numDatos
     numeroColumnas(filas[3], &numDatos);
 
-    //Compilación fechas
+    //Compilacion fechas
     compilarFechas(filas[4], GWh);
 
     //Guarda el numero de anos en numYear

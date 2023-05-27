@@ -18,7 +18,7 @@ void numeroColumnas(char filas[], int *numDatos) {
     }
 }
 
-//Compila las fechas, esta función es separada de los demas datos 
+//Compila las fechas, esta funcion es separada de los demas datos 
 //dado que las fechas son un tipo especial de dato que tiene dos 
 //componentes
 void compilarFechas(char fila[], datos memoria[]){
@@ -47,7 +47,7 @@ void compilarFechas(char fila[], datos memoria[]){
     }
 }
 
-//Cuenta el numero de años que hay en total para usarlo de dato 
+//Cuenta el numero de anos que hay en total para usarlo de dato 
 //a la hora de hacer el resto de cosas
 void numeroYears(datos GWh[], int *numYear) {
     int i;
@@ -59,7 +59,7 @@ void numeroYears(datos GWh[], int *numYear) {
     }
 }
 
-//Lee el titulo de la fuente y lo aplica al año dado
+//Lee el titulo de la fuente y lo aplica al ano dado
 void leerTitulo(char fila[], datos memoria[], int numYear, int num_fuente){
     char *cad_aux, separador[] = ",";
     int i = 0;
@@ -348,7 +348,7 @@ void escoger_fichero_salida(char filas[][10000], int numYear, int num_mes_por_ye
 
         fclose(archivo_nuevo);
 
-        //Compilación fechas
+        //Compilacion fechas
         compilarFechas(cfilas[4], cGWh);
 
         //Guarda el numero de anos en numYear
@@ -434,8 +434,8 @@ void guardar_datos(char filas[][10000], int numYear, int num_mes_por_year[], dat
 }
 
 //Funcion capaz de eliminar datos de forma provisional, esto solo 
-//se hará permanente una vez se guarde al salir del programa, 
-//eliminar datos de forma permanente o provisional alterará los 
+//se hara permanente una vez se guarde al salir del programa, 
+//eliminar datos de forma permanente o provisional alterara los 
 //calculos estadisticos. 
 void eliminar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
     int i = 0, j = 0, k = 0, compr = 0, mes = 1, decision = 1;
@@ -556,7 +556,7 @@ void eliminar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
     } while (menu != '3');
 }
 
-//Funcion que añade valores nuevos o edita los existentes 
+//Funcion que anade valores nuevos o edita los existentes 
 void ingresar_editar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
     int i = 0, j = 0, k = 0, mes = 0, y = 0, salir = 0, crea = 0, edita = 0, comp = 0, pos_y = 0;
     float dato = 0;
@@ -581,7 +581,7 @@ void ingresar_editar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
     if (edita == 1){
         k = 0;
         do{
-            printf("Selecciona la fuente que quiera\n*Para seleccionar la fuente use las teclas 'A' y 'D', para terminar la elección pulsa enter\n");
+            printf("Selecciona la fuente que quiera\n*Para seleccionar la fuente use las teclas 'A' y 'D', para terminar la eleccion pulsa enter\n");
             printf("Fuente seleccionada: \x1b[32m%s\x1b[0m", GWh[0].data[k].nombre_fuente);
             decision2 = getch();
             if (((decision2 == 'A') || (decision2 == 'a')) && (k != 0)){
@@ -643,7 +643,7 @@ void ingresar_editar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
             strcpy(GWh[numYear].data[k].nombre_fuente, GWh[0].data[k].nombre_fuente);
         }
         for ( k = 0; k < 17; k++){
-            printf("Escriba el dato que quiera darle a cada fuente (tenga en cuenta que se le atribuira a la fecha escrita):\n(Si da un valor de 0 y presiona enter para pasar a la siguiente fuente, este dato no se tendrá en cuenta para calculos, recuerda usar puntos y NO comas)\n\nAhora dandole el dato a %s\n", GWh[numYear].data[k].nombre_fuente);
+            printf("Escriba el dato que quiera darle a cada fuente (tenga en cuenta que se le atribuira a la fecha escrita):\n(Si da un valor de 0 y presiona enter para pasar a la siguiente fuente, este dato no se tendra en cuenta para calculos, recuerda usar puntos y NO comas)\n\nAhora dandole el dato a %s\n", GWh[numYear].data[k].nombre_fuente);
             dato = 0;
             scanf("%f", &dato);
             GWh[numYear].data[k].valor_mes[mes-1] = dato;
@@ -663,7 +663,7 @@ void ingresar_editar_dato(datos GWh[], int numYear, int num_mes_por_year[]){
     }
     if (crea == 1 && numYear == 15){
         system("cls");
-        printf("Limite de años alcanzado\n");
+        printf("Limite de anos alcanzado\n");
         system("pause");
         system("cls");
     }
