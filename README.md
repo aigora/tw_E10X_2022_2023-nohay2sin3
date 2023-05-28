@@ -1,8 +1,5 @@
 # [ELECTRIFICATE]
 
-## Descripción
-
-
 ## Integrantes del equipo
 
 <<<<<<< JEFAZOS
